@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Grid from '@mui/material/Grid';
+import Header from './Header';
+import Content from './Content';
+import { ThemeProvider} from '@mui/material/styles';
+import theme from './theme';
+import CssBaseLine from '@mui/material/CssBaseline';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseLine />
+      <Grid container direction="column">
+      <Header />
+      <div style={{ padding: 30 }}>
+        <Content />
+      </div>
+    </Grid>
+    </ThemeProvider>
   );
 }
 
